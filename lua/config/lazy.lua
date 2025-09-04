@@ -17,9 +17,15 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
+    -- git clone された~/.local/share/start/lazy/LazyVim/lua/lazyvim/pluginsをimport
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins
+    -- ~/dotfiles/starter/lua/plugins をimport
     { import = "plugins" },
+    { import = "custom_a" },
+    -- lua/costom_a/xxx.luaは個別にインストールして挙動を確認する場所
+    -- { "sirasagi62/toggle-cheatsheet.nvim", import = "custom_a.toggle-cheatsheet" },
+    -- { "backdround/global-note.nvim" }, { import = "custom_a.global-note" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
